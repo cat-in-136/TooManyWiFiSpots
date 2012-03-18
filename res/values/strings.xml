@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Too Many Public WiFi spots</string>
+    <string name="update">Update</string>
+    <string name="copytoclipboard">Copy to clipboard</string>
+    <string name="not_found_wifi_ap">Could not found any Wi-Fi AP.</string>
+    <string name="wifi_disabled">Wi-Fi is disabled.</string>
+
+</resources>
