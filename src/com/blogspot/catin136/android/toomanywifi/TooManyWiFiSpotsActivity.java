@@ -37,7 +37,7 @@ import android.widget.Toast;
  * 
  * @author cat_in_136
  */
-public class TooManyPublicWiFiSpotsActivity extends Activity {
+public class TooManyWiFiSpotsActivity extends Activity {
     /** A list of scan-result Wi-Fi AP information. */
     private List<WiFiSpotsInfo> spotsInfos = null;
     
