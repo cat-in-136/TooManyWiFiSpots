@@ -71,8 +71,10 @@ public class WiFiSpotsInfo implements Comparable<WiFiSpotsInfo> {
     public int compareTo(WiFiSpotsInfo another) {
 	int diff;
 	
-	diff = this.getCount() - another.getCount();
+	// sort in descending order of the number of the Wi-Fi APs.
+	diff = another.getCount() - this.getCount();
 	if (diff == 0) {
+	    // sort in dictionary order of the SSID.
 	    diff = this.getSSID().compareTo(another.getSSID());
 	}
 	
