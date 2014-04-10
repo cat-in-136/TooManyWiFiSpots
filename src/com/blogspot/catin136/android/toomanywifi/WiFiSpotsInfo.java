@@ -24,6 +24,7 @@ package com.blogspot.catin136.android.toomanywifi;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -120,6 +121,17 @@ public class WiFiSpotsInfo implements Comparable<WiFiSpotsInfo> {
 	
 	// a read-only list shall be return!
 	return Collections.unmodifiableList(info);
+    }
+    
+    /** Get Total Number of Wi-Fi AP. */
+    public static int getTotalNumberOfAP(List<WiFiSpotsInfo> list) {
+	int count = 0;
+	
+	for (WiFiSpotsInfo info : list) {
+	    count += info.count;
+	}
+	
+	return count;
     }
 
 }

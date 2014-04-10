@@ -24,6 +24,7 @@ package com.blogspot.catin136.android.toomanywifi;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.ClipboardManager;
 import android.view.Menu;
@@ -85,13 +86,20 @@ public class TooManyWiFiSpotsActivity extends Activity {
 	spotsListView.setAdapter(adapter);
 
 	// No AP indicates an error message with Toast.
-	if (spotsInfos.size() == 0) {
-	    int messageId = R.string.not_found_wifi_ap;
-	    
-	    if (! WiFiSpotsInfo.isWiFiEnabled(this)) {
-		messageId = R.string.wifi_disabled;
-	    }
-	    Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show();
+	if (WiFiSpotsInfo.isWiFiEnabled(this) == false) {
+	    Toast.makeText(this, R.string.wifi_disabled, Toast.LENGTH_SHORT).show();
+	} else if (spotsInfos.size() == 0) {
+	    Toast.makeText(this, R.string.not_found_wifi_ap, Toast.LENGTH_SHORT).show();
+	} else {
+	    int ssidCount = spotsInfos.size();
+	    int apCount = WiFiSpotsInfo.getTotalNumberOfAP(spotsInfos);
+
+	    String msg = getResources().getQuantityString(
+		    R.plurals.ssid_count_msg, ssidCount, ssidCount)
+		    + "\n"
+		    + getResources().getQuantityString(R.plurals.ap_count_msg,
+			    apCount, apCount);
+	    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
 	}
     }
     

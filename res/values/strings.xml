@@ -5,5 +5,13 @@
     <string name="copytoclipboard">Copy to clipboard</string>
     <string name="not_found_wifi_ap">Could not found any Wi-Fi AP.</string>
     <string name="wifi_disabled">Wi-Fi is disabled.</string>
+    <plurals name="ssid_count_msg">
+        <item quantity="one">One SSID</item>
+        <item quantity="other">%d SSIDs</item>
+    </plurals>
+    <plurals name="ap_count_msg">
+        <item quantity="one">One AP</item>
+        <item quantity="other">%d APs</item>
+    </plurals>
 
 </resources>
